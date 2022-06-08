@@ -11,6 +11,7 @@ export class EmpdetailsComponent implements OnInit {
   empId : any;
   empName : any;
   empTenure : any;
+  isShow : boolean = false;
 
   constructor(private employeeService : EmployeeService) { }
 
@@ -19,6 +20,7 @@ export class EmpdetailsComponent implements OnInit {
 
   getName() {
     console.log('Employee id is ',this.empId);
+    this.isShow = true;
     this.employeeService.getEmployeeName(this.empId)
                         .subscribe((data)=>{
     console.log("Data got .............",data);
