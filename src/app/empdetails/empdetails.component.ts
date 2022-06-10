@@ -20,6 +20,9 @@ export class EmpdetailsComponent implements OnInit {
 
   getName() {
     console.log('Employee id is ',this.empId);
+    
+    this.empId ?? alert('Plesae enter employee id');
+
     this.isShow = true;
     this.employeeService.getEmployeeName(this.empId)
                         .subscribe((data)=>{
