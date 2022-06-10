@@ -20,7 +20,8 @@ export class EmpdetailsComponent implements OnInit {
 
   getName() {
     console.log('Employee id is ',this.empId);
-    
+
+    // checking empId is null or undefined using nullish coalescing
     this.empId ?? alert('Plesae enter employee id');
 
     this.isShow = true;
