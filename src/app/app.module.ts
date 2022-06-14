@@ -7,11 +7,15 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { EmpdetailsComponent } from './empdetails/empdetails.component';
+import { OperatorsComponent } from './operators/operators.component';
+import { MergemapComponent } from './mergemap/mergemap.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmpdetailsComponent
+    EmpdetailsComponent,
+    OperatorsComponent,
+    MergemapComponent
   ],
   imports: [
     BrowserModule,
