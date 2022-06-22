@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { from, mergeMap, of } from 'rxjs';
+import { delay, from, mergeMap, of,switchMap,concatMap } from 'rxjs';
 
 @Component({
   selector: 'app-mergemap',
@@ -11,7 +11,7 @@ export class MergemapComponent implements OnInit {
   constructor() { }
 
   getData(data:string){
-    return of(data + " Video Uploded");
+    return of(data + " Video Uploded").pipe(delay(1000));
   }
 
   createDynamicBox(res: any,contenerId: any){
@@ -34,6 +34,26 @@ export class MergemapComponent implements OnInit {
 
       console.log(res);
       this.createDynamicBox(res,'elContainer');
+    })
+
+    source.pipe(
+      
+      switchMap(res => this.getData(res))
+
+    ).subscribe(res => {
+
+      console.log(res);
+      this.createDynamicBox(res,'elContainer2');
+    })
+
+    source.pipe(
+      
+      concatMap(res => this.getData(res))
+
+    ).subscribe(res => {
+
+      console.log(res);
+      this.createDynamicBox(res,'elContainer3');
     })
   }
 
