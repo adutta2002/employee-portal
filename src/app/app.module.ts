@@ -9,13 +9,15 @@ import { FormsModule } from '@angular/forms';
 import { EmpdetailsComponent } from './empdetails/empdetails.component';
 import { OperatorsComponent } from './operators/operators.component';
 import { MergemapComponent } from './mergemap/mergemap.component';
+import { GoogleHomePageComponent } from './google-home-page/google-home-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmpdetailsComponent,
     OperatorsComponent,
-    MergemapComponent
+    MergemapComponent,
+    GoogleHomePageComponent
   ],
   imports: [
     BrowserModule,
