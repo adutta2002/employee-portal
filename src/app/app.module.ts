@@ -10,6 +10,9 @@ import { EmpdetailsComponent } from './empdetails/empdetails.component';
 import { OperatorsComponent } from './operators/operators.component';
 import { MergemapComponent } from './mergemap/mergemap.component';
 import { GoogleHomePageComponent } from './google-home-page/google-home-page.component';
+import { UserComponent } from './user/user.component';
+import { StoreModule } from '@ngrx/store';
+import { userListReducer } from './store/user-list- reducer';
 
 @NgModule({
   declarations: [
@@ -17,13 +20,15 @@ import { GoogleHomePageComponent } from './google-home-page/google-home-page.com
     EmpdetailsComponent,
     OperatorsComponent,
     MergemapComponent,
-    GoogleHomePageComponent
+    GoogleHomePageComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({users:userListReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]
