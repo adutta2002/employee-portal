@@ -11,8 +11,10 @@ import { OperatorsComponent } from './operators/operators.component';
 import { MergemapComponent } from './mergemap/mergemap.component';
 import { GoogleHomePageComponent } from './google-home-page/google-home-page.component';
 import { UserComponent } from './user/user.component';
+import { MycounterComponent } from './mycounter/mycounter.component';
 import { StoreModule } from '@ngrx/store';
-import { userListReducer } from './store/user-list- reducer';
+import { counterReducer } from './state/counter.reducer';
+
 
 @NgModule({
   declarations: [
@@ -21,14 +23,15 @@ import { userListReducer } from './store/user-list- reducer';
     OperatorsComponent,
     MergemapComponent,
     GoogleHomePageComponent,
-    UserComponent
+    UserComponent,
+    MycounterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    StoreModule.forRoot({users:userListReducer})
+    StoreModule.forRoot({ count: counterReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -26,9 +26,9 @@ export class EmpdetailsComponent implements OnInit {
 
     this.isShow = true;
     this.employeeService.getEmployeeName(this.empId)
-                        .subscribe((data)=>{
-    console.log("Data got .............",data);
-    this.empName = data;                      
+                        .subscribe((res)=>{
+    console.log("Response .............",res);
+    this.empName = res;                      
     })
     this.getTenure();
   }
@@ -36,9 +36,9 @@ export class EmpdetailsComponent implements OnInit {
   getTenure(){
     console.log('Employee id is ',this.empId);
     this.employeeService.getEmployeeTenure(this.empId)
-                        .subscribe((data)=>{
-                          console.log("Data got .............",data);
-                          this.empTenure = data;  
+                        .subscribe((res)=>{
+                          console.log("Response .............",res);
+                          this.empTenure = res;  
                         })    
   }
 

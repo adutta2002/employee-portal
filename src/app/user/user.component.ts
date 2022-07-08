@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { UserListAction } from '../store/user-list.action';
 
 @Component({
   selector: 'app-user',
@@ -10,17 +7,16 @@ import { UserListAction } from '../store/user-list.action';
 })
 export class UserComponent implements OnInit {
 
-   userList : Observable<{ userList: string[]; }>;
+   userList: string[] = [];
 
-  constructor(private store : Store<{users:{userList:string[]}}>) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.userList = this.store.select('users');
+    
   }
 
   public addNewUser(name:string){
-    // this.userList.push(name);
-    this.store.dispatch(new UserListAction(name));
+    this.userList.push(name);
   }
 
 }

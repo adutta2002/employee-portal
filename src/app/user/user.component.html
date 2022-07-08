@@ -3,6 +3,6 @@
     <button (click)="addNewUser(name.value)">Add User</button><br>
     <b>User List</b>
     <ol>
-        <li *ngFor='let user of (userList | async).userList'>{{user}}</li>
+        <li *ngFor='let user of userList'>{{user}}</li>
     </ol>
 </div>
